@@ -1,3 +1,7 @@
 <Solution>
-  <Project Path="SecurityDriven.OneFlight.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path="LICENSE.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="src/SecurityDriven.OneFlight.csproj" />
 </Solution>

@@ -10,7 +10,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Version>1.0.0</Version>
 		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>Inferno.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>../Inferno.snk</AssemblyOriginatorKeyFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIconUrl>https://avatars.githubusercontent.com/u/9137858?s=128</PackageIconUrl>
@@ -21,18 +21,20 @@
 		<PackageReleaseNotes>
 		</PackageReleaseNotes>
 		<Description>High-performance .NET single-flight/coalescing library. Concurrent operations with the same key share one execution and one Task, eliminating duplicate work. Supports generic result types, ValueTask fast paths, state-passing overloads, custom key comparers, optional ExecutionContext suppression, and explicit Forget for in-flight invalidation.</Description>
-  </PropertyGroup>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<None Remove="*.xml" />
 		<None Remove="*.snk" />
-		<None Remove="LICENSE.md" />
-		<None Remove="CHANGES.md" />
-
-		<None Include="README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\LICENSE.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Visible="False" />
+		<None Include="LICENSE.md" Visible="False" />
+	</ItemGroup>
 </Project>
