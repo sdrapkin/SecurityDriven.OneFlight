@@ -110,6 +110,7 @@ namespace SecurityDriven.OneFlight
 		// Task loaders
 		// -----------------------------------------------------------------------------------------
 
+		/// <inheritdoc/>
 		public Task<TResult> RunAsync<TResult>(
 			TKey key,
 			Func<Task<TResult>> loader)
@@ -122,6 +123,7 @@ namespace SecurityDriven.OneFlight
 				static f => new ValueTask<TResult>(f()));
 		}
 
+		/// <inheritdoc/>
 		public Task<TResult> RunAsync<TState, TResult>(
 			TKey key,
 			TState state,
@@ -139,6 +141,7 @@ namespace SecurityDriven.OneFlight
 		// ValueTask loaders
 		// -----------------------------------------------------------------------------------------
 
+		/// <inheritdoc/>
 		public Task<TResult> RunValueAsync<TResult>(
 			TKey key,
 			Func<ValueTask<TResult>> loader)
@@ -151,6 +154,7 @@ namespace SecurityDriven.OneFlight
 				static f => f());
 		}
 
+		/// <inheritdoc/>
 		public Task<TResult> RunValueAsync<TState, TResult>(
 			TKey key,
 			TState state,
@@ -168,6 +172,7 @@ namespace SecurityDriven.OneFlight
 		// Forget
 		// -----------------------------------------------------------------------------------------
 
+		/// <inheritdoc/>
 		public void Forget(TKey key)
 		{
 			ValidateKey(key);
