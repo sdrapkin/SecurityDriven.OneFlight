@@ -4,4 +4,5 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="src/SecurityDriven.OneFlight.csproj" />
+  <Project Path="tests/SecurityDriven.OneFlight.Tests/SecurityDriven.OneFlight.Tests.csproj" Id="f92b21c6-a704-450b-ac79-357c52f7a38e" />
 </Solution>

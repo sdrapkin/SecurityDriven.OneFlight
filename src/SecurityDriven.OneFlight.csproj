@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<PackageId>OneFlight</PackageId>
-		<TargetFramework>net10.0</TargetFramework>
+		<TargetFrameworks>net8.0;net10.0</TargetFrameworks>
 		<Authors>Stan Drapkin</Authors>
 		<Company>https://SecurityDriven.net</Company>
 		<Copyright>Copyright © $([System.DateTime]::UtcNow.ToString(yyyy)) Stan Drapkin</Copyright>

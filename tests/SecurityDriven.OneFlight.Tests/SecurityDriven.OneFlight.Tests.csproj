@@ -1,0 +1,14 @@
+﻿<Project Sdk="MSTest.Sdk/4.4.1">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SecurityDriven.OneFlight.csproj" />
+  </ItemGroup>
+
+</Project>
