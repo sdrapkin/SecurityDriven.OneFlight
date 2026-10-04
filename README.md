@@ -1,6 +1,8 @@
 # **OneFlight** [![NuGet](https://img.shields.io/nuget/v/OneFlight.svg)](https://www.nuget.org/packages/OneFlight/)
 ### by [Stan Drapkin](https://github.com/sdrapkin/)
 
+<img src="https://raw.githubusercontent.com/sdrapkin/SecurityDriven.OneFlight/refs/heads/master/assets/OneFlight.png" alt="OneFlight Logo">
+
 ## High-performance .NET single-flight/coalescing
 
 High-performance .NET single-flight/coalescing library. Concurrent operations with the same key share one execution and one `Task`, eliminating duplicate work. Supports generic result types, `ValueTask` fast paths, state-passing overloads, custom key comparers, optional ExecutionContext suppression, and explicit `Forget` for in-flight invalidation.
