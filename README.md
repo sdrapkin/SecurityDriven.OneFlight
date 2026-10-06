@@ -46,7 +46,9 @@ using SecurityDriven.OneFlight;
 Create one `FlightGroup<TKey>` for the key space you want to coalesce:
 
 ```csharp
-var flights = new FlightGroup<string>();
+// Keep one long-lived FlightGroup instance for this key space.
+// For example, a static field or a field on a singleton/service instance.
+static readonly FlightGroup<string> flights = new();
 ```
 
 Use `RunAsync` around the work:
@@ -67,6 +69,9 @@ Debug.Assert(ReferenceEquals(a, b));
 ```
 
 Once the flight completes, it is removed. A later call with the same key starts a new execution.
+
+> [!IMPORTANT]
+> A `FlightGroup<TKey>` instance defines the scope of coalescing. All calls that should share flights must use the same instance. Do not create a new `FlightGroup<TKey>` for each `RunAsync` call or request; separate instances maintain separate in-flight state and cannot coalesce work with each other.
 
 ## How it works
 
@@ -430,7 +435,7 @@ Forgotten operations that are still executing are not counted because they are n
 ## Example: database request coalescing
 
 ```csharp
-private readonly FlightGroup<int> _users = new();
+static readonly FlightGroup<int> _users = new();
 
 public Task<User> GetUserAsync(int userId)
 {
@@ -452,7 +457,7 @@ If many requests concurrently ask for user `42`, only one `QueryUserAsync(42)` i
 ## Example: external API request
 
 ```csharp
-private readonly FlightGroup<string> _requests = new(
+static readonly FlightGroup<string> _requests = new(
     StringComparer.Ordinal);
 
 public Task<Product> GetProductAsync(
